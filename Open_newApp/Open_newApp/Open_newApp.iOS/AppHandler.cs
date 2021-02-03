@@ -1,11 +1,14 @@
 ﻿using Foundation;
+using Open_newApp.iOS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UIKit;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(AppHandler))]
 namespace Open_newApp.iOS
 {
     public class AppHandler : IAppHandler
@@ -26,14 +29,17 @@ namespace Open_newApp.iOS
         }
         public void OpenExternalApp(string packageName)
         {
-            NSUrl request = new NSUrl("yourapp://");
-
+            //NSUrl request = new NSUrl("yourapp://");
+            NSUrl appURL;
+            string appURI;
+            appURL = new NSUrl("NowClinic://");
+            appURI = "https://itunes.apple.com/us/app/nowclinic/id602339098?mt=8";
             try
             {
-                bool isOpened = UIApplication.SharedApplication.OpenUrl(request);
+                bool isOpened = UIApplication.SharedApplication.OpenUrl(appURL);
 
                 if (isOpened == false)
-                    UIApplication.SharedApplication.OpenUrl(new NSUrl("yourapp://com.kasikorn.retail.mbanking.wap"));
+                    UIApplication.SharedApplication.OpenUrl(new NSUrl(appURI));
             }
             catch (Exception ex)
             {
