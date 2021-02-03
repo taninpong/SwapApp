@@ -20,7 +20,7 @@ namespace Open_newApp
         {
             var appname = @"com.apple.AppStore";
             var result = await DependencyService.Get<IAppHandler>().LaunchApp(appname);
-
+            var x = 0;
         }
     }
 }
