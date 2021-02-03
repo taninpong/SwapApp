@@ -18,7 +18,7 @@ namespace Open_newApp
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var appname = @"com.kasikorn.retail.mbanking.wap";
+            var appname = @"com.apple.AppStore";
             var result = await DependencyService.Get<IAppHandler>().LaunchApp(appname);
 
         }
