@@ -9,8 +9,12 @@
         </Frame>
         <Entry x:Name="input"></Entry>
         <Button Text="OPEN APP" Clicked="Button_Clicked"/>
+<<<<<<< HEAD
+        
+=======
         <Button Text="OPEN APP2" Clicked="Button_Clicked2"/>
         <Button Text="OpenAppForInput" Clicked="Button_Clicked3"/>
+>>>>>>> 591d657df6f4eaf5916a3dacf73872779b0ca312
         
     </StackLayout>
 
