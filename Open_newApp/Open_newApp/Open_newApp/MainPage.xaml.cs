@@ -21,7 +21,6 @@ namespace Open_newApp
         {
             var appname = @"com.apple.AppStore";
             var result = await DependencyService.Get<IAppHandler>().LaunchApp(appname);
-            var x = 0;
         }
 
         private async void Button_Clicked2(object sender, EventArgs e)
@@ -33,6 +32,11 @@ namespace Open_newApp
             else if (Device.RuntimePlatform == Device.iOS)
                 url = "https://itunes.apple.com/" + location + "/app/contractor-action-solution/id1039202852?mt=8";
             await Browser.OpenAsync(url, BrowserLaunchMode.External);
+        }
+
+        private void Button_Clicked3(object sender, EventArgs e)
+        {
+            DependencyService.Get<IAppHandler>().OpenExternalApp(input.Text);
         }
     }
 }

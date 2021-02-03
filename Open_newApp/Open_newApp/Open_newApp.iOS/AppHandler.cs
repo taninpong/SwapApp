@@ -24,5 +24,22 @@ namespace Open_newApp.iOS
                 return Task.FromResult(false);
             }
         }
+        public void OpenExternalApp(string packageName)
+        {
+            NSUrl request = new NSUrl("yourapp://");
+
+            try
+            {
+                bool isOpened = UIApplication.SharedApplication.OpenUrl(request);
+
+                if (isOpened == false)
+                    UIApplication.SharedApplication.OpenUrl(new NSUrl("yourapp://com.kasikorn.retail.mbanking.wap"));
+            }
+            catch (Exception ex)
+            {
+                var alertView = new UIAlertView("Error", ex.Message, null, "OK", null);
+                alertView.Show();
+            }
+        }
     }
 }

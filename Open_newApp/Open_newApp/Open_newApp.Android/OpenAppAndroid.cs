@@ -68,5 +68,22 @@ namespace Open_newApp.Droid
 
             return installed;
         }
+
+        public void OpenExternalApp(string packageName)
+        {
+            Intent intent = Android.App.Application.Context.PackageManager.GetLaunchIntentForPackage(packageName);
+            if (intent != null)
+            {
+                intent.AddFlags(ActivityFlags.NewTask);
+                Forms.Context.StartActivity(intent);
+            }
+            else
+            {
+                intent = new Intent(Intent.ActionView);
+                intent.AddFlags(ActivityFlags.NewTask);
+                intent.SetData(Android.Net.Uri.Parse($"market://details?id=com.kasikorn.retail.mbanking.wap"));
+                Forms.Context.StartActivity(intent);
+            }
+        }
     }
 }
