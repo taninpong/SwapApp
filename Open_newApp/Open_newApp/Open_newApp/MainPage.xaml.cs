@@ -21,12 +21,6 @@ namespace Open_newApp
         {
             var appname = @"https://apps.apple.com/th/app/scb-easy/id568388474";
             var result = await DependencyService.Get<IAppHandler>().LaunchApp(appname);
-<<<<<<< HEAD
-          
-        }
-
-       
-=======
         }
 
         private async void Button_Clicked2(object sender, EventArgs e)
@@ -44,6 +38,5 @@ namespace Open_newApp
         {
             DependencyService.Get<IAppHandler>().OpenExternalApp(input.Text);
         }
->>>>>>> 591d657df6f4eaf5916a3dacf73872779b0ca312
     }
 }
