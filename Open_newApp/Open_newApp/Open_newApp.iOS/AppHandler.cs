@@ -27,5 +27,25 @@ namespace Open_newApp.iOS
                 return Task.FromResult(false);
             }
         }
+        public void OpenExternalApp(string packageName)
+        {
+            //NSUrl request = new NSUrl("yourapp://");
+            NSUrl appURL;
+            string appURI;
+            appURL = new NSUrl("NowClinic://");
+            appURI = "https://itunes.apple.com/us/app/nowclinic/id602339098?mt=8";
+            try
+            {
+                bool isOpened = UIApplication.SharedApplication.OpenUrl(appURL);
+
+                if (isOpened == false)
+                    UIApplication.SharedApplication.OpenUrl(new NSUrl(appURI));
+            }
+            catch (Exception ex)
+            {
+                var alertView = new UIAlertView("Error", ex.Message, null, "OK", null);
+                alertView.Show();
+            }
+        }
     }
 }

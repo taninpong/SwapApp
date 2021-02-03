@@ -8,5 +8,6 @@ namespace Open_newApp
     public interface IAppHandler
     {
         Task<bool> LaunchApp(string packageName);
+        void OpenExternalApp(string text);
     }
 }
