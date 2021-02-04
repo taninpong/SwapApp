@@ -19,7 +19,7 @@ namespace Open_newApp
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var appname = @"id568388474";
+            var appname = @"568388474";
             var result = await DependencyService.Get<IAppHandler>().LaunchApp(appname);
         }
 
