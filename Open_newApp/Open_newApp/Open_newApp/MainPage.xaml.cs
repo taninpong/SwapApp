@@ -19,7 +19,7 @@ namespace Open_newApp
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var appname = @"yourapp://com.scb.iphone";
+            var appname = @"skype://com.scb.iphone";
             var result = await DependencyService.Get<IAppHandler>().LaunchApp(appname);
         }
 
