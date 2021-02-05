@@ -40,6 +40,8 @@
 		<string>com.apple.Health</string>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
+	<string> skype </string>
+	<string> sip </string>
 	<array>
 		<string>accom.ibm.cognos-mobile</string>
 		<string>roomreservation</string>
